@@ -1,0 +1,10 @@
+npm i -g corepack
+
+yarn init -2
+
+npm install -g create-react-app
+
+then goto folder and open cmd:
+
+npx create-react-app [app-name]
+
