@@ -1,0 +1,10 @@
+npm install bootstrap --save-dev
+
+npm install reactstrap react-popper
+
+then goto index.js file and import bootstrap.
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
