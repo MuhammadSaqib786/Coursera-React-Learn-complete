@@ -3,15 +3,15 @@ import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 
 class Dish extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      
-    }
+  componentDidMount() {
+    console.log("Dish Component compDidMount called")
+  }
+  componentDidUpdate() {
+    console.log("Dish Component compDidUpdate called")
   }
 
   render() {
+    console.log("DishDetails render method called");
     if (this.props.dish == null) {
       return <div></div>;
     } else {
@@ -32,8 +32,8 @@ class Dish extends Component {
             
                 {this.props.dish.comments.map( (mydish) => {
                     return(
-                      <div className="container">
-                        <p key={mydish.id} className="dishDetail">
+                      <div key={ mydish.id } className="container">
+                        <p  className="dishDetail">
                         {mydish.comment} <br></br>
                         -- {mydish.author} , { new Intl.DateTimeFormat('en-US',{ year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(mydish.date)))  }
                         </p>
