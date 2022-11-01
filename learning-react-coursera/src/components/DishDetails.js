@@ -16,6 +16,7 @@ class Dish extends Component {
       return <div></div>;
     } else {
       return (
+        
         <div className="row">
           <div className="col-12 col-md-5 m-1">
             <Card>
@@ -31,10 +32,12 @@ class Dish extends Component {
             
                 {this.props.dish.comments.map( (mydish) => {
                     return(
+                      <div className="container">
                         <p key={mydish.id} className="dishDetail">
                         {mydish.comment} <br></br>
-                        -- {mydish.author} , {mydish.date}
+                        -- {mydish.author} , { new Intl.DateTimeFormat('en-US',{ year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(mydish.date)))  }
                         </p>
+                        </div>
                     );
                     
                 
